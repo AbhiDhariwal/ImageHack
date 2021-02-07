@@ -39,7 +39,10 @@ final_model.summary()
 
 
 #load weights
+weightFile = "time_inceptionV3_7_loss_3.2604.h5"
+weightFile = "time_inceptionV3_1.88.h5"
 weightFile = "time_inceptionV3_7_loss_2.092.h5"
+
 final_model.load_weights(weightFile)
 
 unique = pickle.load(open('unique.p', 'rb'))
