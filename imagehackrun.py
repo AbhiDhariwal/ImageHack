@@ -22,14 +22,14 @@ app.add_middleware(
 
 @app.post("/items/")
 async def create_item(item: Item):
-	print(item)
-	try:
-		urllib.request.urlretrieve(item.url, "testing.jpg")
-		cap =  predict_captions("testing.jpg")
-		print ('Normal Max search:', cap) 
-	except Exception as e:
-		print("Error:",e)
-		cap = ""
+    print(item)
+    try:
+        urllib.request.urlretrieve(item.url, "testing.jpg")
+        cap =  predict_captions("testing.jpg")
+        print ('Normal Max search:', cap) 
+    except Exception as e:
+        print("Error:",e)
+        cap = ""
 
     return {"id":item.id, "url":item.url, "output":cap}
 
