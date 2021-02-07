@@ -30,6 +30,11 @@ async def create_item(item: Item):
 
     return {"id":item.id, "url":item.url, "output":cap}
 
+@app.get("/ping")
+async def create_item():
+
+    return {"ping":"pong"}
+
 import uvicorn
 
 uvicorn.run(app, port=8000)
