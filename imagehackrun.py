@@ -24,7 +24,11 @@ app.add_middleware(
 async def create_item(item: Item):
     print(item)
     try:
-        urllib.request.urlretrieve(item.url, "testing.jpg")
+        url = item.url.replace(" ","%20")
+    except:
+        url = item.url
+    try:
+        urllib.request.urlretrieve(url, "testing.jpg")
         cap =  predict_captions("testing.jpg")
         print ('Normal Max search:', cap) 
     except Exception as e:
