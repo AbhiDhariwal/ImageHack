@@ -4,7 +4,8 @@ from pydantic import BaseModel
 import urllib.request
 from imagehack import *
 import time
-
+import requests
+import json
 
 class Item(BaseModel):
     id: str
